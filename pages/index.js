@@ -4,9 +4,34 @@ import diane from '../public/dianehigh.png'
 import SearchBar from '../components/Searchbar'
 import FeaturedPosts from '../components/FeaturedPosts'
 import SteamRecents from '../components/SteamRecents'
+import axios from 'axios'
 
+export async function getStaticProps(context) {
+    const { data } = await axios.get(`http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${process.env.STEAM_KEY}&steamid=${process.env.STEAM_ID}&format=json`)
+    const response = data.response
 
-export default function Home() {
+    let appidList = ''
+    for (let game of response.games) {
+        appidList += (game.appid + ',')
+    }
+
+    const tagData = await axios.get(`https://store.steampowered.com/broadcast/ajaxgetbatchappcapsuleinfo?appids=${appidList}`)
+    const apps = tagData.data.apps
+    
+    for (let i = 0; i < apps.length; i++) {
+        response.games[i].tags = apps[i].tags
+    }
+
+    console.log('HomePage', 'revalidating RecentGames.')
+    return {
+        props: {
+            recentGames:response,
+            revalidate: 60
+        }
+    }
+}
+
+export default function Home({recentGames}) {
 
     return (
         <div className='bg-ht-gray-700'>
@@ -19,12 +44,10 @@ export default function Home() {
                 </section>
 
                 <SearchBar className={'mx-12 mt-8'} />
-
                 <FeaturedPosts className={'mt-8'}/>
-
-                <SteamRecents className={'mt-8'}/>
-
+                <SteamRecents className={'mt-8'} recentGames={recentGames}/>
             </main>
         </div>
     )
 }
+
