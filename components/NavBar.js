@@ -11,7 +11,8 @@ export default function NavBar({ navPage, pages }) {
         const detachClasses = [
             'shadow-2xl',
             'backdrop-blur-md',
-            'bg-ht-gray-600'
+            'bg-ht-gray-600',
+            'bg-opacity-50'
         ]
 
         if (window.scrollY > 10) {
@@ -35,7 +36,7 @@ export default function NavBar({ navPage, pages }) {
 
 
     return (
-        <nav ref={navRef} className={'px-4 py-4 pt-5 z-50 sticky flex justify-center inset-x-0 top-2 gap-4 rounded-xl max-w-4xl mx-auto bg-ht-gray-700 bg-opacity-60 transition-all'}>
+        <nav ref={navRef} className={'px-4 py-4 pt-5 z-50 sticky flex justify-center inset-x-0 top-2 gap-4 rounded-xl max-w-4xl mx-auto bg-transparent transition-all'}>
             {navRoutes.map((route) => {
                 return (
                     <NavLink
