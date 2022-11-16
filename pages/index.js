@@ -35,7 +35,7 @@ export default function Home({recentGames}) {
 
     return (
         <div className='bg-ht-gray-700'>
-            <main className='mx-auto max-w-3xl h-[200vh]'>
+            <main className='max-w-3xl pb-20 mx-auto'>
                 <section className="px-8 pt-8 mt-8 rounded-none shadow-2xl ring-1 ring-ht-primary-900 bg-ht-primary-800 md:rounded-md">
                     <Image className='float-right w-40 h-40 rounded-full ring-4 ring-ht-gray-500' src={diane} alt={'Diane being high'}/>
                     <h1 className='mb-2 text-6xl font-bold text-ht-gray-500'>AMAL S RAJ</h1>
@@ -44,8 +44,8 @@ export default function Home({recentGames}) {
                 </section>
 
                 <SearchBar className={'mx-12 mt-8'} />
-                <FeaturedPosts className={'mt-8'}/>
-                <SteamRecents className={'mt-8'} recentGames={recentGames}/>
+                <FeaturedPosts className={'mt-16'}/>
+                <SteamRecents className={'mt-16'} recentGames={recentGames}/>
             </main>
         </div>
     )
