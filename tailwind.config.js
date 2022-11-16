@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'steamRecentGames': '80px auto 230px'
+      },
       colors: {
         'ht-gray-500': '#E8E8EB',
         'ht-gray-600': '#808090',
