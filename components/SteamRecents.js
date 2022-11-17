@@ -17,12 +17,14 @@ export default function SteamRecents({ className, recentGames }) {
                             <div className="col-start-1 col-end-2 row-span-1 place-self-center text-ht-gray-600"><p className="text-4xl">{('00' + (index + 1)).slice(-2)}</p></div>
                             <div className="col-start-2 col-end-3 row-span-1 py-1 text-3xl font-semibold text-ht-primary-900">{game.name}</div>
                             <div className="flex items-center col-start-2 col-end-3 row-span-1 overflow-hidden">
-                                <div className="flex items-center gap-2 mr-4 overflow-hidden whitespace-nowrap tag-fade">
+                                <div className="flex items-center gap-2 mr-4 overflow-x-auto scrollbar-hide whitespace-nowrap tag-fade">
                                 {game.tags.slice(0,7).map((tag) => <p className="px-2 py-[1px] font-semibold rounded-full bg-ht-gray-600 text-ht-gray-500" key={tag.tagid}> {tag.name}</p>)}
                                 </div>
                             </div>
-                            <div className="col-start-3 col-end-4 row-start-1 row-end-3 overflow-hidden">
-                                <Image src={`https://cdn.akamai.steamstatic.com/steam/apps/${game.appid}/capsule_231x87.jpg`} alt={game.name} width={231} height={87} className={'rounded-xl'}/>
+                            <div className="col-start-3 col-end-4 row-start-1 row-end-3">
+                                <a href={`https://store.steampowered.com/app/${game.appid}`}>
+                                <Image src={`https://cdn.akamai.steamstatic.com/steam/apps/${game.appid}/capsule_231x87.jpg`} alt={game.name} width={231} height={87} className={'rounded-xl hover:scale-110 hover:shadow-xl transition-all'}/>
+                                </a>
                             </div>
     
                         </div>
