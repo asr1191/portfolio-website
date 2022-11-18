@@ -24,3 +24,21 @@
   font-family: 'Dimbo';
   src: url('/fonts/dimbo-regular.ttf');
 }
+
+@layer utilities {
+  .tag-fade {
+    position: relative;
+  }
+
+  .tag-fade:after {
+    content  : "";
+    position : absolute;
+    z-index  : 1;
+    bottom   : 0;
+    left     : 0;
+    pointer-events   : none;
+    background-image : linear-gradient(to left, #28283E, rgba(255,255,255, 0) 20%);
+    width    : 100%;
+    height   : 4em;
+  }
+}

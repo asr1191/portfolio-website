@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'steamRecentGames': '80px auto 230px'
+      },
       colors: {
         'ht-gray-500': '#E8E8EB',
         'ht-gray-600': '#808090',
@@ -17,7 +20,7 @@ module.exports = {
         'ht-primary-600': '#571229',
         'ht-primary-700': '#741C31',
         'ht-primary-800': '#A43139',
-        'ht-primary-900': ' #E64D51',
+        'ht-primary-900': ' #E64D51', 
 
         'ht-secondary-700': '#6A2441',
         'ht-secondary-800': '#9A445B',
@@ -34,5 +37,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('tailwind-scrollbar-hide'),
   ],
 }
