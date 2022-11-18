@@ -26,7 +26,7 @@ export default function FeaturedPosts({ posts, className }) {
     return (
         <section className={className}>
             <h1 className="text-4xl font-bold text-ht-primary-900">Featured Posts</h1>
-            <h2 className="pt-2 pb-8 text-lg font-semibold text-ht-gray-600">These are some of my latest musings. They are 100% correct and objective facts. Source: Trust me bro.</h2>
+            <h2 className="mt-2 mb-8 text-lg font-semibold text-ht-gray-600">These are some of my latest musings. They are 100% correct and objective facts. Source: Trust me bro.</h2>
             <ul className="flex justify-between gap-4 text-ht-gray-500">
                 {posts.map((post) => {
                     return (
