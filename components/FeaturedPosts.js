@@ -19,7 +19,7 @@ export default function FeaturedPosts({ posts, className }) {
             slug: 'my-third-post',
             title: 'My Third Post',
             content: 'This is my first post. This is some random content.',
-            views: 14675
+            views: 14679
         },
     ]
 
