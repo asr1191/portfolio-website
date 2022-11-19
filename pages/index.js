@@ -44,8 +44,8 @@ export default function Home({recentGames}) {
                 </section>
 
                 <SearchBar className={'mx-12 mt-8'} />
-                <FeaturedPosts className={'mt-16'}/>
-                <SteamRecents className={'mt-16'} recentGames={recentGames}/>
+                <FeaturedPosts className={'mt-16 mx-8 md:mx-0'}/>
+                <SteamRecents className={'mt-16 mx-8 md:mx-0'} recentGames={recentGames}/>
             </main>
         </div>
     )

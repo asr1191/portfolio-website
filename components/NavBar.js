@@ -36,7 +36,7 @@ export default function NavBar({ navPage, pages }) {
 
 
     return (
-        <nav ref={navRef} className={'px-4 py-4 pt-5 z-50 sticky flex justify-center inset-x-0 top-2 gap-4 rounded-xl max-w-4xl mx-auto transition-all'}>
+        <nav ref={navRef} className={'px-4 py-4 pt-5 z-50 sticky flex justify-center inset-x-0 top-4 gap-4 rounded-xl max-w-4xl mx-auto transition-all'}>
             {navRoutes.map((route) => {
                 return (
                     <NavLink
