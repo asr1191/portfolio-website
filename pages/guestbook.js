@@ -1,7 +1,7 @@
 // Guestbook inspired from https://leerob.io/guestbook
 
-import Card from '../components/Card'
-import GuestComments from '../components/GuestComments'
+import Card from 'components/Card'
+import GuestComments from 'components/GuestComments'
 
 export default function Guestbook() {
     return (

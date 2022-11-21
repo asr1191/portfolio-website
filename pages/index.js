@@ -1,9 +1,8 @@
 import Image from 'next/image'
-import hitagi from '../public/hitagi.png'
-import diane from '../public/dianehigh.png'
-import SearchBar from '../components/Searchbar'
-import FeaturedPosts from '../components/FeaturedPosts'
-import SteamRecents from '../components/SteamRecents'
+import diane from 'public/dianehigh.png'
+import SearchBar from 'components/Searchbar'
+import FeaturedPosts from 'components/FeaturedPosts'
+import SteamRecents from 'components/SteamRecents'
 import axios from 'axios'
 
 export async function getStaticProps(context) {
