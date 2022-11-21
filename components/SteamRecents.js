@@ -1,11 +1,13 @@
 import Image from "next/image"
+import Card from "./Card"
 
 export default function SteamRecents({ className, recentGames }) {
     return (
-        <section className={className}>
-            <h1 className="text-5xl font-bold text-ht-primary-900">What I&apos;ve Been Playing</h1>
-            <h2 className="pt-3 pb-8 text-lg font-semibold text-ht-gray-600">I’ve been playing these games recently for the last few weeks. I don’t usually play a single game for too long, prefering to experiment with a wide variety till I find something that clicks.</h2>
-
+        <Card
+            title={`What I've Been Playing`}
+            subtitle={`I’ve been playing these games recently for the last few weeks. I don’t usually play a single game for too long, prefering to experiment with a wide variety till I find something that clicks.`}
+            className={className}
+        >
             <ul>
                 {recentGames.games.slice(0, 5).map((game, index) => {
                     return (
@@ -34,7 +36,6 @@ export default function SteamRecents({ className, recentGames }) {
                         </li>)
                 })}
             </ul>
-
-        </section>
+        </Card>
     )
 }

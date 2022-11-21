@@ -1,4 +1,5 @@
 import { BsEye } from 'react-icons/bs'
+import Card from './Card'
 
 export default function FeaturedPosts({ posts, className }) {
 
@@ -24,9 +25,11 @@ export default function FeaturedPosts({ posts, className }) {
     ]
 
     return (
-        <section className={className}>
-            <h1 className="text-5xl font-bold text-ht-primary-900">Featured Posts</h1>
-            <h2 className="mt-2 mb-8 text-lg font-semibold text-ht-gray-600">These are some of my latest musings. They are 100% correct and objective facts. Source: Trust me bro.</h2>
+        <Card 
+            title={'Featured Posts'} 
+            subtitle={'These are some of my latest musings. They are 100% correct and objective facts. Source: Trust me bro.'}
+            className={className}
+        >
             <ul className="flex justify-between gap-4 text-ht-gray-500 ">
                 {posts.map((post) => {
                     return (
@@ -43,6 +46,6 @@ export default function FeaturedPosts({ posts, className }) {
                     )
                 })}
             </ul>
-        </section>
+        </Card>
     )
 }
