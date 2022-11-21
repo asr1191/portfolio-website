@@ -12,7 +12,8 @@ export default function NavBar({ navPage, pages }) {
             'shadow-2xl',
             'backdrop-blur-md',
             'bg-ht-gray-600',
-            'bg-opacity-50'
+            'bg-opacity-50',
+            'backdrop-grayscale-[0.4]'
         ]
 
         if (window.scrollY > 10) {
