@@ -11,6 +11,10 @@ export async function getStaticProps(context) {
 
     let appidList = ''
     for (let game of response.games) {
+        if(game.appid == 480) {
+            response.games.splice(response.games.indexOf(game), 1);
+            continue;
+        }
         appidList += (game.appid + ',')
     }
 
