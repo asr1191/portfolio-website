@@ -1,5 +1,5 @@
 import { BsEye } from 'react-icons/bs'
-import Card from 'components/Card'
+import Card from '@components/Card'
 
 export default function FeaturedPosts({ posts, className }) {
 
@@ -25,8 +25,8 @@ export default function FeaturedPosts({ posts, className }) {
     ]
 
     return (
-        <Card 
-            title={'Featured Posts'} 
+        <Card
+            title={'Featured Posts'}
             subtitle={'These are some of my latest musings. They are 100% correct and objective facts. Source: Trust me bro.'}
             className={className}
         >

@@ -1,12 +1,12 @@
 // Guestbook inspired from https://leerob.io/guestbook
 
-import Card from 'components/Card'
-import GuestComments from 'components/GuestComments'
+import Card from '@components/Card'
+import GuestComments from '@components/GuestComments'
 
 export default function Guestbook() {
     return (
         <div className='bg-ht-gray-700'>
-            <Card 
+            <Card
                 className='max-w-3xl mx-auto mt-8'
                 title={'Guestbook'}
                 subtitle={'Leave a comment below. It could be anything – appreciation, information, wisdom, or even humor. Surprise me!'}
