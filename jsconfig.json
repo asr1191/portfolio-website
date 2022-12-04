@@ -1,5 +1,34 @@
 {
     "compilerOptions": {
-        "baseUrl": "."
-    }
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": [
+                "components/*"
+            ],
+            "@posts/*": [
+                "posts/*"
+            ],
+            "@public/*": [
+                "public/*"
+            ],
+            "@images/*": [
+                "public/images/*"
+            ],
+            "@fonts/*": [
+                "public/fonts/*"
+            ],
+            "@styles/*": [
+                "styles/*"
+            ],
+            "@generated/*": [
+                "./.contentlayer/generated/*"
+            ],
+            "@utils/*": [
+                "utils/*"
+            ]
+        }
+    },
+    "include": [
+        ".contentlayer/generated"
+    ]
 }
