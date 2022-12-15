@@ -48,4 +48,46 @@
   .text-anaglyph-2 {
     text-shadow: -2px 0 1px rgb(124, 192, 192) , 2px 0 1px rgb(153, 35, 37);
   }
+  /* @keyframes fall-forever {
+    from {
+      mask-position: 0 0;
+    }
+    to {
+      mask-position: 0 219px;
+    }
+  }
+  .ds-ring {
+    mask: url(/images/ds-bg-ring-mask.png) luminance center 100%;
+    mask-repeat: repeat-y;
+
+    animation-name: fall-forever;
+    animation-iteration-count: infinite;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+
+    box-shadow: 0 0 30px 40px rgb(235, 184, 118);
+  } */
+
+  .ds-ring-gradient {
+    background: rgb(147,94,86);
+    background: radial-gradient(circle, rgba(147,94,86,1) 47%, rgba(253,247,229,1) 50%, rgba(250,227,144,1) 51%, rgba(244,197,153,1) 52%, rgba(246,167,124,1) 53%, rgba(237,116,98,1) 55%, rgba(237,116,98,0.5) 72%, rgba(237,116,98,0) 100%); 
+  }
+
+  .ds-background-aio {
+    background: linear-gradient(to top, rgba(200, 170, 135, 0.35) 0%, rgb(88, 64, 71, 0.35) 1280px ), url(/images/bg-clouds-top.png), rgb(88,64,71);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: 100%, 100%;
+    background-blend-mode: color-dodge, normal, normal;
+    background-position: bottom, top, top;
+    background-attachment: local, fixed, local;
+  }
+  .ring-clouds-mask {
+    mask-image: url(/images/bg-ring-cloud-mask.png);
+    mask-mode: luminance;
+    mask-repeat: no-repeat;
+    mask-position: top;
+    mask-size: contain;
+
+    mix-blend-mode: color-dodge;
+  }
 }

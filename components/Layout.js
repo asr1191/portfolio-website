@@ -10,11 +10,18 @@ export function Footer() {
 }
 
 export default function Layout({ children }) {
+
+    const pageName = children.type.name;
+
     return (
-        <div className="min-h-screen bg-ht-gray-700">
-            <NavBar />
-            {children}
-            <Footer />
-        </div>
+        <>
+            {pageName !== 'Test' ? <div className="min-h-screen bg-ht-gray-700">
+                <NavBar />
+                <main className="max-w-3xl pb-20 mx-auto pt-[6.5rem]">
+                    {children}
+                </main>
+                <Footer />
+            </div> : children}
+        </>
     )
 }
