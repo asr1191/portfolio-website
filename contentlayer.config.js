@@ -1,5 +1,7 @@
 import { defineDocumentType, defineNestedType, makeSource } from 'contentlayer/source-files'
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import readingTime from 'reading-time';
+import rehypeSlug from 'rehype-slug';
 
 
 const Author = defineNestedType(() => ({
@@ -42,4 +44,17 @@ const Post = defineDocumentType(() => ({
 export default makeSource({
     contentDirPath: 'posts/',
     documentTypes: [Post],
+    mdx: {
+        rehypePlugins: [
+            [rehypeSlug],
+            [rehypeAutolinkHeadings,
+                {
+                    behavior: "prepend",
+                    // properties: {
+                    //     className: [HEADING_LINK_ANCHOR],
+                    // },
+                },
+            ],
+        ],
+    }
 })

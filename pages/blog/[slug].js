@@ -24,10 +24,16 @@ export async function getStaticProps({ params }) {
 
 export default function BlogPost({ post }) {
 
+    const components = {
+        h1: (props) => {
+            return <h1 className='text-blue-500' {...props} />
+        }
+    }
+
     const MDXContent = useMDXComponent(post.body.code);
-    return <div>
-        <div className='max-w-3xl mx-auto'>
-            <div className='flex items-start justify-between mt-16'>
+    return (
+        <div>
+            <div className='flex items-start justify-between'>
                 <Link href={`/blog`}>
                     <div className='flex items-center text-2xl text-ht-gray-600 group'>
                         <MdOutlineArrowBackIosNew className='mr-1 text-xl transition-all group-hover:-translate-x-2' />
@@ -39,9 +45,10 @@ export default function BlogPost({ post }) {
                     <p className=''>{post.readingTime.text}</p>
                 </div>
             </div>
-            <div className='mt-4 prose prose-xl max-w-none prose-invert prose-h1:text-ht-primary-900'>
-                <MDXContent />
+            {/* <div className='mt-4 prose prose-xl max-w-none prose-invert prose-h1:text-ht-primary-900'> */}
+            <div className='mt-4 prose prose-invert'>
+                <MDXContent components={components} />
             </div>
         </div>
-    </div>
+    )
 }

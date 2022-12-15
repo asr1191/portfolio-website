@@ -29,6 +29,10 @@
         }
     },
     "include": [
-        ".contentlayer/generated"
+        ".contentlayer/generated",
+        "components/",
+        "posts/",
+        "public/",
+        "utils/"
     ]
 }
