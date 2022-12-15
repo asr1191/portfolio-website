@@ -8,4 +8,4 @@ SEO and next/head, <https://www.npmjs.com/package/next-seo>
 
 fibonacci spacing prettifier
 
-remove h-screen backgrounds on individual pages.
+caching

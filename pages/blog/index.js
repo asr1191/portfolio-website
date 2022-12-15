@@ -18,30 +18,27 @@ export function getStaticProps() {
 
 export default function Blog({ posts }) {
     return (
-        <div className='h-screen bg-ht-gray-700'>
-            <main className="max-w-3xl mx-auto">
-                <Card
-                    title={'Blog'}
-                    subtitle={`I've been writing online since yesterday, mostly about web development and tech careers. In total, I've written ${posts.length} articles on my blog. Use the search below to filter by title.`}
-                    className={'mt-8'}
-                >
-                    <SearchBar />
-                </Card>
+        <>
+            <Card
+                title={'Blog'}
+                subtitle={`I've been writing online since yesterday, mostly about web development and tech careers. In total, I've written ${posts.length} articles on my blog. Use the search below to filter by title.`}
+            >
+                <SearchBar />
+            </Card>
 
-                <div className='mt-12'>
-                    {posts.map((post) =>
-                        <BlogCard
-                            className='mt-8'
-                            key={post.slug}
-                            title={post.title}
-                            description={post.description}
-                            readingTime={post.readingTime}
-                            slug={post.slug}
-                            publishedAt={post.publishedAt}
-                        />
-                    )}
-                </div>
-            </main>
-        </div>
+            <div className='mt-12'>
+                {posts.map((post) =>
+                    <BlogCard
+                        className='mt-8'
+                        key={post.slug}
+                        title={post.title}
+                        description={post.description}
+                        readingTime={post.readingTime}
+                        slug={post.slug}
+                        publishedAt={post.publishedAt}
+                    />
+                )}
+            </div>
+        </>
     )
 }
