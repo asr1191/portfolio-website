@@ -1,4 +1,5 @@
 import NavBar from "@components/NavBar";
+import { useRouter } from "next/router";
 
 export function Footer() {
     return (
@@ -11,11 +12,11 @@ export function Footer() {
 
 export default function Layout({ children }) {
 
-    const pageName = children.type.name;
+    const router = useRouter();
 
     return (
         <>
-            {pageName !== 'Test' ? <div className="min-h-screen bg-ht-gray-700">
+            {router.asPath !== '/test' ? <div className="min-h-screen bg-ht-gray-700">
                 <NavBar />
                 <main className="max-w-3xl pb-20 mx-auto pt-[6.5rem]">
                     {children}
