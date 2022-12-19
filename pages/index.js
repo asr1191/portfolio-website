@@ -1,5 +1,7 @@
 import Image from 'next/image'
-import axios from 'axios'
+
+import getRecentGamesData from '@lib/getRecentGamesData'
+import { createPosts } from '@lib/db'
 
 import SearchBar from '@components/Searchbar'
 import FeaturedPosts from '@components/FeaturedPosts'
@@ -7,25 +9,10 @@ import SteamRecents from '@components/SteamRecents'
 import diane from '@images/dianehigh.png'
 
 export async function getStaticProps(context) {
-    const { data } = await axios.get(`http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${process.env.STEAM_KEY}&steamid=${process.env.STEAM_ID}&format=json`)
-    const response = data.response
 
-    let appidList = ''
-    for (let i = 0; i < response.games.length;) {
-        if (response.games[i].appid == 480) {
-            response.games.splice(i, 1);
-            continue;
-        }
-        appidList += (response.games[i].appid + ',')
-        i++
-    }
+    const response = await getRecentGamesData()
+    const postCount = await createPosts()
 
-    const tagData = await axios.get(`https://store.steampowered.com/broadcast/ajaxgetbatchappcapsuleinfo?appids=${appidList}`)
-    const apps = tagData.data.apps
-
-    for (let i = 0; i < apps.length; i++) {
-        response.games[i].tags = apps[i].tags
-    }
 
     console.log('HomePage', 'revalidating RecentGames.')
     return {

@@ -3,7 +3,7 @@ import SearchBar from '@components/Searchbar';
 import BlogCard from '@components/BlogCard';
 
 import { allPosts } from '.contentlayer/generated'
-import select from '@utils/select'
+import select from '@lib/select'
 
 export function getStaticProps() {
 

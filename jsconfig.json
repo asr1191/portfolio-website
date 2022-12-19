@@ -23,8 +23,8 @@
             "@generated/*": [
                 "./.contentlayer/generated/*"
             ],
-            "@utils/*": [
-                "utils/*"
+            "@lib/*": [
+                "lib/*"
             ]
         }
     },
@@ -33,6 +33,6 @@
         "components/",
         "posts/",
         "public/",
-        "utils/"
+        "lib"
     ]
 }
