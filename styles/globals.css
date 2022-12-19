@@ -25,7 +25,7 @@
   src: url('/fonts/dimbo-regular.ttf');
 }
 
-@layer utilities {
+@layer components {
   .tag-fade {
     position: relative;
   }
@@ -73,6 +73,11 @@
     background: radial-gradient(circle, rgba(147,94,86,1) 47%, rgba(253,247,229,1) 50%, rgba(250,227,144,1) 51%, rgba(244,197,153,1) 52%, rgba(246,167,124,1) 53%, rgba(237,116,98,1) 55%, rgba(237,116,98,0.5) 72%, rgba(237,116,98,0) 100%); 
   }
 
+  .ds-line-gradient {
+    background: rgb(239,150,128);
+    background: linear-gradient(90deg, rgba(239,150,128,0) 0%,rgba(239,150,128,1) 41%, rgba(244,197,153,1) 47%, rgba(250,227,144,1) 49%, rgba(253,247,229,1) 50%, rgba(250,227,144,1) 51%, rgba(244,197,153,1) 53%, rgba(239,150,128,1) 59%, rgba(239,150,128,0) 100%); 
+  }
+
   .ds-background-aio {
     background: linear-gradient(to top, rgba(200, 170, 135, 0.35) 0%, rgb(88, 64, 71, 0.35) 1280px ), url(/images/bg-clouds-top.png), rgb(88,64,71);
     background-repeat: no-repeat, no-repeat, no-repeat;
@@ -89,5 +94,9 @@
     mask-size: contain;
 
     mix-blend-mode: color-dodge;
+  }
+
+  .loading-shimmer {
+    @apply relative overflow-hidden before:absolute before:w-full before:h-full before:bg-gradient-to-r before:from-transparent before:via-slate-500 before:to-transparent before:animate-[shimmer_2s_infinite] before:-translate-x-full;
   }
 }
