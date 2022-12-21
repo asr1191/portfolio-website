@@ -14,7 +14,7 @@ export default function FeaturedPosts({ className }) {
     }, [])
 
     async function getFeaturedPosts() {
-        const { data } = await axios.get('/api/posts')
+        const { data } = await axios.get('/api/featuredposts')
         setPosts(data.posts);
     }
 
