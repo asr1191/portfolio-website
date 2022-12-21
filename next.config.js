@@ -2,6 +2,19 @@ const { withContentlayer } = require('next-contentlayer');
 
 const nextConfig = {
   reactStrictMode: true,
+  async headers() {
+    return [
+      {
+        source: "/api/posts",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "s-maxage=5, stale-while-revalidate=59",
+          },
+        ],
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {
