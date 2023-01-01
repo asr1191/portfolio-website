@@ -89,7 +89,7 @@
   .ring-clouds-mask {
     mask-image: url(/images/bg-ring-cloud-mask-alpha.png);
     /* mask-mode: luminance; */
-    mask-repeat: no-repeat;
+    mask-repeat: repeat-x;
     mask-position: top;
     mask-size: contain;
 

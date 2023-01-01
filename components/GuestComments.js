@@ -4,7 +4,7 @@ export default function GuestComment() {
     return (
         <div>
             {comments.map((comment) => (
-                <div key={comment.time} className='p-4 mt-4 rounded-lg bg-ht-gray-800'>
+                <div key={comment.time} className='p-4 mt-4 transition-all rounded-lg hover:translate-x-4 bg-ht-gray-800'>
                     <p className='text-2xl text-ht-gray-500'>{comment.content}</p>
                     <p><span className='mt-4 text-gray-500'>{comment.name}</span><span className='mt-4 ml-4 text-gray-700'>/ {comment.time}</span></p>
                 </div>
