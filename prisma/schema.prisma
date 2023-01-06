@@ -1,6 +1,6 @@
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL_DEV")
   relationMode = "prisma"
 }
 
@@ -14,4 +14,19 @@ model comment {
   updatedAt       DateTime  @updatedAt
   name            String    @db.VarChar(255)
   content         String    @db.VarChar(255)
+}
+
+model PostMeta {
+  id             Int      @id @default(autoincrement())
+  updatedAt      DateTime @updatedAt
+  publishedAt    String   @db.VarChar(255)
+  title          String   @db.VarChar(500)
+  description    String   @db.VarChar(2000)
+  seoDescription String   @db.VarChar(2000)
+  category       String   @db.VarChar(255)
+  authorImage    String?  @db.VarChar(255)
+  authorName     String?  @db.VarChar(255)
+  image          String   @db.VarChar(255)
+  viewCount      Int      @default(0) @db.UnsignedInt
+  slug           String   @unique @db.VarChar(255)
 }
