@@ -30,3 +30,8 @@ model PostMeta {
   viewCount      Int      @default(0) @db.UnsignedInt
   slug           String   @unique @db.VarChar(255)
 }
+
+model TestModel {
+  id   Int    @id @default(autoincrement())
+  name String @db.VarChar(20)
+}

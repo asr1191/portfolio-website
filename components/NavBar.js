@@ -6,13 +6,14 @@ const navRoutes = ['home', 'guestbook', 'dashboard', 'blog', 'contact']
 
 
 export default function NavBar({ navPage, pages }) {
-    
+
     const detachNavBar = () => {
         const detachClasses = [
             'shadow-2xl',
             'backdrop-blur-md',
             'bg-ht-gray-600',
-            'bg-opacity-50'
+            'bg-opacity-50',
+            'backdrop-grayscale-[0.4]'
         ]
 
         if (window.scrollY > 10) {
@@ -27,16 +28,16 @@ export default function NavBar({ navPage, pages }) {
 
     useEffect(() => {
         window.addEventListener('scroll', detachNavBar)
-        
+
         return () => {
             window.removeEventListener('scroll', detachNavBar)
         }
     }, [])
-    
+
 
 
     return (
-        <nav ref={navRef} className={'px-4 py-4 pt-5 z-50 sticky flex justify-center inset-x-0 top-2 gap-4 rounded-xl max-w-4xl mx-auto transition-all'}>
+        <nav ref={navRef} className={'px-4 py-4 pt-5 z-50 fixed flex justify-center inset-x-0 top-4 gap-4 rounded-xl max-w-4xl mx-auto transition-all'}>
             {navRoutes.map((route) => {
                 return (
                     <NavLink

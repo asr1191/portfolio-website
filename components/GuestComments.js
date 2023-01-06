@@ -1,12 +1,12 @@
-import comments from '../MOCK_DATA.json'
+import comments from 'MOCK_DATA.json'
 
 export default function GuestComment() {
     return (
         <div>
             {comments.map((comment) => (
-                <div className='bg-ht-gray-800 rounded-lg mt-4 p-4'>
-                    <p className=' text-2xl text-ht-gray-500'>{comment.content}</p>
-                    <p><span className='mt-4 text-gray-500'>{comment.name}</span><span className='ml-4 mt-4 text-gray-700'>/ {comment.time}</span></p>
+                <div key={comment.time} className='p-4 mt-4 transition-all rounded-lg hover:translate-x-4 bg-ht-gray-800'>
+                    <p className='text-2xl text-ht-gray-500'>{comment.content}</p>
+                    <p><span className='mt-4 text-gray-500'>{comment.name}</span><span className='mt-4 ml-4 text-gray-700'>/ {comment.time}</span></p>
                 </div>
             ))}
         </div>
@@ -15,5 +15,5 @@ export default function GuestComment() {
 
 // for comment in comments:
 //     print(comment.name)
-// 
+//
 // commments.map()
